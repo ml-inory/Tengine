@@ -168,6 +168,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Bsymbolic -Bsymbolic-functions")
+add_definitions(${CONFIG_OPT_CFLAGS})
 
 include_directories(include)
 
@@ -233,7 +234,7 @@ add_subdirectory(tests)
 add_subdirectory(examples)
 
 ## Configure install directory
-set(CMAKE_INSTALL_PREFIX "${tengine_BINARY_DIR}/install")
+# set(CMAKE_INSTALL_PREFIX "${tengine_BINARY_DIR}/install")
 
 install (TARGETS tengine  DESTINATION lib)
 if(NOT BUILD_ALL_IN_STATIC AND NOT BUILD_ALL_IN_ONE)
